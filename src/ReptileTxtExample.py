@@ -1,4 +1,5 @@
 # 股票数据定向爬虫 爬取文本到指定文件夹下的文件中
+import os
 
 import requests
 from bs4 import BeautifulSoup
@@ -63,6 +64,10 @@ def getStockInfo(lst, stockURL, fpath):
 def main():
     stock_list_url = 'http://quote.eastmoney.com/stocklist.html'
     stock_info_url = 'https://gupiao.baidu.com/stock/'
+    if os.path.isdir('D:\\test'):
+        print("此文件夹已存在")
+    else:
+        os.makedirs('D:\\test')
     output_file = 'D:\\test\\date.txt' # 文件路径
     slist = []
     getStockList(slist, stock_list_url)
