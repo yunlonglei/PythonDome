@@ -1,5 +1,9 @@
+
 # 股票数据定向爬虫 爬取文本到指定文件夹下的文件中
 import os
+
+# 股票数据定向爬虫，爬取文本到指定文件夹下的文件中
+
 
 import requests
 from bs4 import BeautifulSoup
@@ -72,6 +76,7 @@ def main():
     slist = []
     getStockList(slist, stock_list_url)
     getStockInfo(slist, stock_info_url, output_file)
+
 
 
 main()
