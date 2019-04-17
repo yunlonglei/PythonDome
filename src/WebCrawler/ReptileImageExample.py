@@ -1,7 +1,8 @@
-#爬取图片到指定文件夹
+# 爬取图片到指定文件夹
 
 import re
 import urllib.request
+
 
 # ------ 获取网页源代码的方法 ---
 def getHtml(url):
@@ -9,10 +10,12 @@ def getHtml(url):
     html = page.read()
     return html
 
+
 # ------ getHtml()内输入任意帖子的URL ------
 html = getHtml("https://tieba.baidu.com/p/5352556650")
 # ------ 修改html对象内的字符编码为UTF-8 ------
 html = html.decode('UTF-8')
+
 
 # ------ 获取帖子内所有图片地址的方法 ------
 def getImg(html):
@@ -22,17 +25,18 @@ def getImg(html):
     imglist = re.findall(imgre, html)
     return imglist
 
+
 imgList = getImg(html)
 imgName = 0
 for imgPath in imgList:
     # ------ 这里最好使用异常处理及多线程编程方式 ------
     try:
-        f = open('D:\\test\\'+ str(imgName)+".jpg", 'wb')
+        f = open('D:\\test\\' + str(imgName) + ".jpg", 'wb')
         f.write((urllib.request.urlopen(imgPath)).read())
         print(imgPath)
         f.close()
     except Exception as e:
-        print(imgPath+" error")
+        print(imgPath + " error")
     imgName += 1
 
 print("All Done!")
