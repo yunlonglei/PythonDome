@@ -2,6 +2,9 @@
 
 import re
 import urllib.request
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 
 # ------ 获取网页源代码的方法 ---
@@ -12,9 +15,9 @@ def getHtml(url):
 
 
 # ------ getHtml()内输入任意帖子的URL ------
-html = getHtml("https://tieba.baidu.com/p/5352556650")
+html = getHtml("https://pic.netbian.com/tupian/27849.html")
 # ------ 修改html对象内的字符编码为UTF-8 ------
-html = html.decode('UTF-8')
+html = html.decode('gbk')
 
 
 # ------ 获取帖子内所有图片地址的方法 ------
@@ -31,7 +34,7 @@ imgName = 0
 for imgPath in imgList:
     # ------ 这里最好使用异常处理及多线程编程方式 ------
     try:
-        f = open('D:\\test\\' + str(imgName) + ".jpg", 'wb')
+        f = open('/Users/leiyunlong/Downloads/imgs/' + str(imgName) + ".jpg", 'wb')
         f.write((urllib.request.urlopen(imgPath)).read())
         print(imgPath)
         f.close()

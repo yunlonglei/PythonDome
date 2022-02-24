@@ -12,12 +12,12 @@ cursor = db.cursor()
 cursor.execute("DROP TABLE IF EXISTS EMPLOYEE")
 
 # 使用预处理语句创建表
-sql = """CREATE TABLE EMPLOYEE (
+sql = '''CREATE TABLE EMPLOYEE (
          FIRST_NAME  CHAR(20) NOT NULL,
          LAST_NAME  CHAR(20),
          AGE INT,  
          SEX CHAR(1),
-         INCOME FLOAT )"""
+         INCOME FLOAT )'''
 
 cursor.execute(sql)
 
