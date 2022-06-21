@@ -7,5 +7,5 @@
 股票数据定向爬虫 爬取文本到指定文件夹下的文件中（D:\\test\\date.txt）
    ReptileTxtExample.py   
 ```python
-    #核心代码我们写在这里
+    # 核心代码我们写在这里
 ```
