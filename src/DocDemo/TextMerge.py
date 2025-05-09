@@ -12,7 +12,8 @@ def merge_files_in_folder(folder_path, output_file):
                     # output.write('\n')
 
 # 要合并的文件夹路径
-folder_path = 'C:/Users/lenovo/Desktop/sql'
+# folder_path = 'C:/Users/lenovo/Desktop/sql'
+folder_path = '/Users/leiyunlong/Library/Containers/com.tencent.WeWorkMac/Data/Documents/Profiles/AE2D75698DBDDA7774A1C84404559C93/Caches/Files/2025-03/2DC723938F379368B2C850B22963A356/kssql/sql/prod/sql/4'
 
 # 合并后的输出文件
 output_file = 'merged_file.sql'
